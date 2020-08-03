@@ -21,9 +21,14 @@ function Todo (props){
            
        
        />
+       </p>
+       <p className="span-wrap">
+       <span>
+           {props.date}
+       </span>
     
     <span>
-            <FontAwesomeIcon className="icon"
+        <FontAwesomeIcon className="icon"
          icon="trash"
 
          onClick={() => props.deleteItem(tasks.key)}

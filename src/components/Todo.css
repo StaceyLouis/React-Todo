@@ -1,12 +1,19 @@
-.icon {
-    margin: 5px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans+Condensed:wght@300&display=swap');
 
+
+.icon {
+margin-left: 70px;
+}
+.list p {
+    font-family: 'Dancing Script', cursive;
+}
 .list p input{
     background-color: transparent;
     border: 0;
-    font-size: 18px;
+    font-size: 40px;
     color: white;
+    font-family: 'Dancing Script', cursive;
+
 }
 .list p input:focus{
     outline: none;

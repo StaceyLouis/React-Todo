@@ -15,7 +15,7 @@ function TodoList(props){
             return  <div className="list" key={item.key} 
             >
           <p>
-              <Todo tasks={item} deleteItem={props.deleteItem} setUpdate={props.setUpdate}/>
+              <Todo date={props.date} tasks={item} deleteItem={props.deleteItem} setUpdate={props.setUpdate}/>
             
             
 

@@ -3,6 +3,8 @@ import '../styles/form.css'
 import TodoList from './TodoList'
 import{library} from '@fortawesome/fontawesome-svg-core'
 import {faTrash} from '@fortawesome/free-solid-svg-icons'
+import {Route} from 'react-router-dom'
+
 
 library.add(faTrash)
 
@@ -10,6 +12,7 @@ class TodoForm extends React.Component{
     constructor(props){
         super(props);
         this.state={
+          date: new Date().toLocaleString(),
             array:[],
             task:{
                 text:'',
@@ -21,16 +24,19 @@ class TodoForm extends React.Component{
         this.onSubmit=this.onSubmit.bind(this);
         this.onDelete=this.onDelete.bind(this);
         this.setUpdate = this.setUpdate.bind(this);
+        
 
       }
 
       onChange(e){
           this.setState({
+            name:e.target.value,
               task:{
                   text:e.target.value,
                   key:Date.now()
               }
           })
+         
       }
     onSubmit(e){
         e.preventDefault();
@@ -45,6 +51,7 @@ class TodoForm extends React.Component{
                 }
             })
         }
+      
     }
     setUpdate(text,key){
         const items = this.state.array;
@@ -68,8 +75,13 @@ class TodoForm extends React.Component{
         })
     
       }
+    
+   
     render(){
+       
         return(
+          <div>
+              <Route exact path='/form'>
             <div className="app">
                 <header>
                 <form id="to-do-form" onSubmit={this.onSubmit}>
@@ -83,11 +95,14 @@ class TodoForm extends React.Component{
                 </form>
                 
                 </header>
-      
+                </div>
                 <TodoList tasks={this.state.array} 
                 deleteItem={this.onDelete}
                 setUpdate={this.setUpdate}
+                date={this.state.date}
                 />
+          
+            </Route>
             </div>
         )
     }

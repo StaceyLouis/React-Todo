@@ -1,7 +1,7 @@
 .list {
     color: white;
     width: 300px;
-    background-color: #bf07ac;
+   
     height: 50px;
     margin: 20px auto;
     border-radius: 5px;
@@ -14,5 +14,7 @@
     position: absolute;
     right: 10px;
     cursor: pointer;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
